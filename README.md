@@ -18,9 +18,10 @@ Then open http://127.0.0.1:5500/ (Vite may pick another free port if 5500 is tak
 The picker reads a generated index, not the filesystem on every load. After you move, rename, add, or remove set folders or files under `svg/`, the UI will stay stale until you regenerate:
 
 ```bash
-cd web
 npm run generate:icons
 ```
+
+(Runs the script in [`web/`](web/); `cd web` first only if you prefer working from that folder.)
 
 (or restart dev / run build, which does the same thing).
 
