@@ -16,9 +16,13 @@ Open the URL Vite prints (default http://127.0.0.1:5500/). Port **5500** avoids 
 
 ## Generate the index
 
+After you move, rename, add, or remove set folders or files under `svg/`, the UI will stay stale until you regenerate:
+
 ```bash
 npm run generate:icons
 ```
+
+(or restart dev / run build, which does the same thing).
 
 Writes under `public/data/` (gitignored):
 

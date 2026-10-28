@@ -145,6 +145,7 @@ Open source icon sets downloaded from [icons.diagrams.net](https://icons.diagram
 | [Ramadhan and eid](ramadhan-and-eid/) | 36 | CC0 1.0 Universal (CC0 1.0) Public Domain Dedication | erifqi zeicon |
 | [Sap](sap/) | 33 | MIT | Sandro Pereira |
 | [Servers](servers/) | 22 | MIT | Sandro Pereira |
+| [Smile & FHIR](smile-and-fhir/) | 3 | Proprietary (see set README) | Smile Digital Health |
 | [Social / Gender](social-gender/) | 22 | CC0 1.0 Universal (CC0 1.0) Public Domain Dedication | Travis Avery |
 | [Social Media (Outline)](social-media-outline-17/) | 50 | CC0 1.0 Universal (CC0 1.0) Public Domain Dedication | Suryadi - |
 | [Strabo](strabo/) | 78 | WTFPL | Visual Idiot |
