@@ -6,7 +6,7 @@ import { defineConfig, type Connect, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const iconsRoot = path.resolve(__dirname, "../icons");
+const iconsRoot = path.resolve(__dirname, "../../icons");
 
 const MIME: Record<string, string> = {
   ".svg": "image/svg+xml",

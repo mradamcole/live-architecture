@@ -1,6 +1,6 @@
 # Icon selector (web)
 
-Lucid-style icon picker for the local [`icons/`](../icons/) corpus, plus a checklist to choose which sets appear in the picker.
+Lucid-style icon picker for the shared [`icons/`](../../icons/) corpus, plus a checklist to choose which sets appear in the picker.
 
 ## Quick start
 
@@ -32,7 +32,7 @@ Writes under `public/data/` (gitignored):
 | `sets/{id}.json` | Icons in one set |
 | `search-min.json` | Flat search index |
 
-Icon files stay in `../icons/` (SVG and PNG under each set’s `svg/` folder) and are served at `/icons/...` in dev and preview.
+Icon files stay in `../../icons/` (SVG and PNG under each set’s `svg/` folder) and are served at `/icons/...` in dev and preview.
 
 ## Demo layout
 
@@ -74,4 +74,4 @@ Typical wiring:
 
 ## Licenses
 
-Icon sets have mixed licenses. Check [`icons/README.md`](../icons/README.md) and each set’s README before reuse.
+Icon sets have mixed licenses. Check [`icons/README.md`](../../icons/README.md) and each set’s README before reuse.
