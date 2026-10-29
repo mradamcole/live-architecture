@@ -69,7 +69,7 @@ export function App() {
           Lucid-style picker over {setCount || "…"} local draw.io icon sets.
           Check licenses in{" "}
           <a href="/icons/README.md" target="_blank" rel="noreferrer">
-            icons/README.md
+            assets/icons/README.md
           </a>
           .
         </p>

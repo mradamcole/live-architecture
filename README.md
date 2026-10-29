@@ -10,7 +10,7 @@ Embeddable widgets and shared assets for architecture tooling.
 
 ## Shared assets
 
-- [`icons/`](icons/) — SVG icon sets downloaded from [icons.diagrams.net](https://icons.diagrams.net/)
+- [`assets/icons/`](assets/icons/) — SVG icon sets downloaded from [icons.diagrams.net](https://icons.diagrams.net/)
 
 ## Quick start (icon palette)
 

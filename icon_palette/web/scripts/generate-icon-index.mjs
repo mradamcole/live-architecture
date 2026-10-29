@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "../../..");
-const iconsRoot = path.join(repoRoot, "icons");
+const iconsRoot = path.join(repoRoot, "assets", "icons");
 const outRoot = path.resolve(__dirname, "../public/data");
 const setsOutDir = path.join(outRoot, "sets");
 

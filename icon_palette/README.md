@@ -1,6 +1,6 @@
 # Icon palette
 
-Lucid-style icon picker widget for the shared [`icons/`](../icons/) corpus.
+Lucid-style icon picker widget for the shared [`assets/icons/`](../assets/icons/) corpus.
 
 - [`web/`](web/) — Vite + React demo: choose which sets to enable (max 20 by default), browse/search icons, drag onto a drop target
 
