@@ -66,7 +66,7 @@ export function SetPreviewPopover({
     if (!el) return;
     const { width, height } = el.getBoundingClientRect();
     setPos(computePosition(anchorRect, width, height));
-  }, [anchorRect, icons, loading, error]);
+  }, [anchorRect, icons, loading, error, previewIconCount]);
 
   const shown = icons?.length ?? 0;
   const subtitle =
