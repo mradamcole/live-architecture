@@ -1,6 +1,12 @@
 /** Maximum number of icon sets that can be enabled in the picker at once. */
 export const DEFAULT_MAX_ENABLED_ICON_SETS = 20;
 
+/** Delay before showing an icon-set name hover preview (ms). */
+export const DEFAULT_SET_PREVIEW_HOVER_DELAY_MS = 500;
+
+/** Max icons shown in the set-name hover preview. */
+export const DEFAULT_SET_PREVIEW_ICON_COUNT = 20;
+
 /** Curated defaults so the demo picker is usable on first visit. */
 export const DEFAULT_ENABLED_SET_IDS = [
   "azure",

@@ -84,6 +84,61 @@ input {
   color: var(--la-muted);
 }
 
+/* Combined icon palette tabs */
+.la-tabs {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0;
+  border-bottom: 1px solid var(--la-border);
+  background: #fafbfd;
+}
+
+.la-tab {
+  flex: 1;
+  margin: 0;
+  padding: 10px 12px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--la-muted);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.la-tab:hover {
+  background: var(--la-hover);
+  color: var(--la-text);
+}
+
+.la-tab:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--la-accent-soft);
+}
+
+.la-tab.is-active {
+  color: var(--la-text);
+  border-bottom-color: var(--la-accent);
+  background: #fff;
+}
+
+.la-icon-palette__body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.la-icon-selector--embedded,
+.la-set-list--embedded {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
 .la-search {
   position: relative;
   flex: 0 0 auto;
@@ -191,6 +246,74 @@ input {
   color: var(--la-muted);
   font-variant-numeric: tabular-nums;
   font-size: 11px;
+}
+
+/* Set-name hover preview (portaled to body) */
+.la-set-preview {
+  position: fixed;
+  z-index: 1000;
+  width: min(280px, calc(100vw - 16px));
+  max-height: min(320px, calc(100vh - 16px));
+  overflow: auto;
+  padding: 8px;
+  border: 1px solid var(--la-border);
+  border-radius: var(--la-radius);
+  background: var(--la-panel);
+  box-shadow: 0 8px 24px rgba(31, 36, 48, 0.16);
+  pointer-events: auto;
+}
+
+@media (hover: none) {
+  .la-set-preview {
+    display: none;
+  }
+}
+
+.la-set-preview__header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+  padding: 0 2px 6px;
+  border-bottom: 1px solid var(--la-border-soft);
+}
+
+.la-set-preview__title {
+  font-weight: 650;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.la-set-preview__meta {
+  font-size: 11px;
+  color: var(--la-muted);
+}
+
+.la-set-preview__status {
+  margin: 4px 2px;
+}
+
+.la-set-preview__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+}
+
+.la-set-preview__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 4px;
+  background: #fafbfd;
+}
+
+.la-set-preview__cell img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 /* Accordion / icon selector */

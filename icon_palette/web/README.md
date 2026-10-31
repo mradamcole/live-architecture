@@ -36,9 +36,10 @@ Icon files stay in `../../assets/icons/` (SVG and PNG under each set’s `svg/` 
 
 ## Demo layout
 
-1. **Icon sets** — check up to 20 sets (configurable).
-2. **Icons** — accordion + search over enabled sets only; hover highlight; drag icons.
-3. **Drop target** — accepts dragged icons and shows metadata.
+1. **Icon palette** — one panel with two tabs:
+   - **Icons** (default) — accordion + search over enabled sets; hover highlight; drag icons.
+   - **Icon Sets** — check up to 20 sets (configurable).
+2. **Drop target** — accepts dragged icons and shows metadata.
 
 Selection persists in `localStorage` under `live-architecture.enabledIconSets`.
 
@@ -50,14 +51,15 @@ In [`src/config.ts`](src/config.ts):
 export const DEFAULT_MAX_ENABLED_ICON_SETS = 20;
 ```
 
-Or pass `maxEnabled` to `IconSetList` from your host app.
+Or pass `maxEnabled` to `IconPalettePanel` (or `IconSetList`) from your host app.
 
 ## Embed
 
+Prefer the combined panel:
+
 ```ts
 import {
-  IconSetList,
-  IconSelector,
+  IconPalettePanel,
   DEFAULT_MAX_ENABLED_ICON_SETS,
   ICON_DRAG_MIME,
 } from "./index"; // or your package path
@@ -66,11 +68,13 @@ import {
 Typical wiring:
 
 1. Load `/data/sets.json`.
-2. Keep `enabledSetIds` in parent state (cap with `IconSetList`).
-3. Pass the same ids to `IconSelector`.
+2. Keep `enabledSetIds` in parent state.
+3. Render `IconPalettePanel` with `sets`, `enabledSetIds`, `onEnabledSetIdsChange`, and optional `maxEnabled` / `storageKey`.
 4. On drop, read `ICON_DRAG_MIME` JSON (`IconRef`) or `text/uri-list`.
 
-`IconSelector` props: `enabledSetIds`, optional `sets`, `singleExpand`, `onIconDragStart`.
+`IconPalettePanel` props: `sets`, `enabledSetIds`, `onEnabledSetIdsChange`, optional `maxEnabled`, `storageKey`, `singleExpand`, `onIconDragStart`.
+
+`IconSelector` and `IconSetList` remain available for separate layouts. Pass `embedded` when nesting them inside custom chrome.
 
 ## Licenses
 

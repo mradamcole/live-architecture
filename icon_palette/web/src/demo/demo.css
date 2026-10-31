@@ -31,7 +31,7 @@
 
 .la-app__main {
   display: grid;
-  grid-template-columns: minmax(260px, 300px) minmax(300px, 360px) minmax(280px, 1fr);
+  grid-template-columns: minmax(340px, 420px) minmax(280px, 1fr);
   gap: 12px;
   padding: 0 14px 14px;
   min-height: 0;

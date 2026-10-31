@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { IconSelector } from "@/components/icon-selector";
 import type { IconSetSummary } from "@/components/icon-selector/types";
-import { IconSetList } from "@/components/icon-set-list";
+import { IconPalettePanel } from "@/components/icon-palette-panel";
 import {
   DEFAULT_ENABLED_SET_IDS,
   DEFAULT_MAX_ENABLED_ICON_SETS,
@@ -77,16 +76,12 @@ export function App() {
       <main className="la-app__main">
         {ready ? (
           <>
-            <IconSetList
+            <IconPalettePanel
               sets={sets}
               enabledSetIds={enabledSetIds}
               onEnabledSetIdsChange={setEnabledSetIds}
               maxEnabled={maxEnabled}
               storageKey={ENABLED_SETS_STORAGE_KEY}
-            />
-            <IconSelector
-              enabledSetIds={enabledSetIds}
-              sets={sets}
               singleExpand={false}
             />
             <DropZone />

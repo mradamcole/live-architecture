@@ -19,6 +19,8 @@ export type IconSelectorProps = {
   className?: string;
   singleExpand?: boolean;
   onIconDragStart?: (icon: IconRef, event: DragEvent) => void;
+  /** When true, skip outer panel chrome (for use inside IconPalettePanel). */
+  embedded?: boolean;
 };
 
 export function IconSelector({
@@ -27,6 +29,7 @@ export function IconSelector({
   className,
   singleExpand = false,
   onIconDragStart,
+  embedded = false,
 }: IconSelectorProps) {
   const [catalog, setCatalog] = useState<IconSetSummary[]>(setsProp ?? []);
   const [query, setQuery] = useState("");
@@ -162,18 +165,26 @@ export function IconSelector({
     });
   }, [globalHits, query, singleExpand]);
 
+  const rootClass = embedded
+    ? `la-icon-selector la-icon-selector--embedded ${className ?? ""}`.trim()
+    : `la-panel la-icon-selector ${className ?? ""}`.trim();
+
   if (enabledSets.length === 0) {
     return (
-      <div className={`la-panel la-icon-selector ${className ?? ""}`.trim()}>
-        <div className="la-panel__title">Icons</div>
-        <p className="la-empty">Select icon sets in the list</p>
+      <div className={rootClass}>
+        {!embedded ? <div className="la-panel__title">Icons</div> : null}
+        <p className="la-empty">
+          {embedded
+            ? "Select icon sets in the Icon Sets tab"
+            : "Select icon sets in the list"}
+        </p>
       </div>
     );
   }
 
   return (
-    <div className={`la-panel la-icon-selector ${className ?? ""}`.trim()}>
-      <div className="la-panel__title">Icons</div>
+    <div className={rootClass}>
+      {!embedded ? <div className="la-panel__title">Icons</div> : null}
       <SearchField
         value={query}
         onChange={setQuery}
