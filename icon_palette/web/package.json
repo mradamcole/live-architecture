@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@live-architecture/motion": "file:../../shared/motion",
     "@tanstack/react-virtual": "^3.13.12",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"

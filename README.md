@@ -11,6 +11,7 @@ Embeddable widgets and shared assets for architecture tooling.
 ## Shared assets
 
 - [`assets/icons/`](assets/icons/) — SVG icon sets downloaded from [icons.diagrams.net](https://icons.diagrams.net/)
+- [`shared/motion/`](shared/motion/) — CSS motion tokens and Motion-for-React primitives for widget micro-interactions
 
 ## Quick start (icon palette)
 

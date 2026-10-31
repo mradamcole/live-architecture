@@ -1,0 +1,15 @@
+:root {
+  --la-motion-duration-fast: 120ms;
+  --la-motion-duration-md: 220ms;
+  --la-motion-duration-slow: 320ms;
+  --la-motion-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --la-motion-ease-emphasized: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --la-motion-duration-fast: 0ms;
+    --la-motion-duration-md: 0ms;
+    --la-motion-duration-slow: 0ms;
+  }
+}

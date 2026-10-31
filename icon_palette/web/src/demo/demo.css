@@ -58,7 +58,9 @@
   justify-content: center;
   min-height: 180px;
   background: #fafbfd;
-  transition: border-color 0.12s ease, background 0.12s ease;
+  transition:
+    border-color var(--la-motion-duration-fast) var(--la-motion-ease-standard),
+    background var(--la-motion-duration-fast) var(--la-motion-ease-standard);
 }
 
 .la-dropzone__target.is-active {

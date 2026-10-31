@@ -18,10 +18,13 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "baseUrl": ".",
     "paths": {
-      "@icon-selector/*": ["src/components/icon-selector/*"],
-      "@/*": ["src/*"]
+      "@icon-selector/*": ["./src/components/icon-selector/*"],
+      "@/*": ["./src/*"],
+      "@live-architecture/motion": ["../../shared/motion/src/index.ts"],
+      "@live-architecture/motion/tokens.css": [
+        "../../shared/motion/src/css/tokens.css"
+      ]
     }
   },
   "include": ["src"]

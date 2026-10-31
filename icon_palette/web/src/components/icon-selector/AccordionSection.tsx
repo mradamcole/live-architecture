@@ -1,3 +1,4 @@
+import { Collapse } from "@live-architecture/motion";
 import { useEffect, useId, useState, type DragEvent } from "react";
 import { IconGrid } from "./IconGrid";
 import type { IconEntry, IconRef, IconSetSummary } from "./types";
@@ -88,13 +89,13 @@ export function AccordionSection({
           <span className="la-accordion__count">{set.count}</span>
         </button>
       </h3>
-      {expanded ? (
-        <div
-          id={panelId}
-          role="region"
-          aria-labelledby={headerId}
-          className="la-accordion__panel"
-        >
+      <Collapse
+        open={expanded}
+        id={panelId}
+        role="region"
+        aria-labelledby={headerId}
+      >
+        <div className="la-accordion__panel">
           {loading ? (
             <p className="la-muted">Loading icons…</p>
           ) : error ? (
@@ -109,7 +110,7 @@ export function AccordionSection({
             />
           ) : null}
         </div>
-      ) : null}
+      </Collapse>
     </section>
   );
 }

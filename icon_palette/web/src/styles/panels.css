@@ -356,7 +356,7 @@ input {
 
 .la-accordion__chevron {
   display: inline-block;
-  transition: transform 0.12s ease;
+  transition: transform var(--la-motion-duration-fast) var(--la-motion-ease-standard);
   color: var(--la-muted);
 }
 

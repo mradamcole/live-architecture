@@ -1,0 +1,29 @@
+{
+  "name": "@live-architecture/motion",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./tokens.css": "./src/css/tokens.css"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "motion": "^12.23.12"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "~5.9.2"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  }
+}

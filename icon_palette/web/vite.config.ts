@@ -62,16 +62,68 @@ function serveIconsPlugin(): Plugin {
 export default defineConfig({
   plugins: [react(), serveIconsPlugin()],
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-      "@icon-selector": path.resolve(__dirname, "src/components/icon-selector"),
-    },
+    // Prevent nested copies under shared/motion from breaking React context.
+    dedupe: ["react", "react-dom"],
+    alias: [
+      {
+        find: "@",
+        replacement: path.resolve(__dirname, "src"),
+      },
+      {
+        find: "@icon-selector",
+        replacement: path.resolve(__dirname, "src/components/icon-selector"),
+      },
+      {
+        find: /^@live-architecture\/motion$/,
+        replacement: path.resolve(
+          __dirname,
+          "../../shared/motion/src/index.ts",
+        ),
+      },
+      {
+        find: /^@live-architecture\/motion\/tokens\.css$/,
+        replacement: path.resolve(
+          __dirname,
+          "../../shared/motion/src/css/tokens.css",
+        ),
+      },
+      {
+        find: /^react$/,
+        replacement: path.resolve(__dirname, "node_modules/react"),
+      },
+      {
+        find: /^react-dom$/,
+        replacement: path.resolve(__dirname, "node_modules/react-dom"),
+      },
+      {
+        find: /^react\/jsx-runtime$/,
+        replacement: path.resolve(
+          __dirname,
+          "node_modules/react/jsx-runtime.js",
+        ),
+      },
+      {
+        find: /^react\/jsx-dev-runtime$/,
+        replacement: path.resolve(
+          __dirname,
+          "node_modules/react/jsx-dev-runtime.js",
+        ),
+      },
+    ],
+  },
+  optimizeDeps: {
+    // Local TS source package — do not prebundle; let Vite transform JSX.
+    exclude: ["@live-architecture/motion"],
+    include: ["motion/react"],
   },
   server: {
     host: "127.0.0.1",
     // Avoid Windows Hyper-V excluded ranges (e.g. 5160–5259).
     port: 5500,
     strictPort: false,
+    fs: {
+      allow: [path.resolve(__dirname, "../..")],
+    },
   },
   preview: {
     host: "127.0.0.1",
